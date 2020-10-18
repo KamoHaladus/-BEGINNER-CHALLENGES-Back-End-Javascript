@@ -45,7 +45,7 @@ export const getBlockByNumber = async (
     // const unsub = await Api.query.system.number.multi(
     //     [...blockNumbers],
     //     (blockHash) => {
-    //         console.log("dupa", blockHash[0].toString());
+    //         console.log("debug", blockHash[0].toString());
 
     //         console.log(JSON.stringify(blockHash));
     //     },
@@ -61,7 +61,6 @@ export const getCurrentBlock = async (): Promise<Header> => {
 
 export const getBlockByHash = async (hashList: string[]): Promise<Header[]> => {
     let result: Header[] = [];
-    console.log("tutaj");
 
     for (let hash of hashList) {
         const res = await Api.rpc.chain.getBlock(hash);
